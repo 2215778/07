@@ -2,26 +2,13 @@
 #include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-void sub(void);
+int all_files; //공통되는 전역변수 
+ 
  
 int main(int argc, char *argv[]) {
-	int i;
-	for(i=0; i<3; i++)
-	    sub();
-    
+	sub(); //이름없음의 void sub로 인해 연결됨 
+	printf("%d\n",all_files);
+	
 	return 0;
 }
 
-void sub(void)
-{
-	int auto_count=0; //동적할당 
-	static int static_count=0; //정적할당
-	
-	//변수 1 증가 _동적할당은 증가 안함 
-	auto_count++;
-	static_count++;
-	
-	//변수 내용 확인 
-	printf("auto_count=%d\n",auto_count);
-	printf("static_count=%d\n",static_count);
-}
