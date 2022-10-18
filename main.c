@@ -2,11 +2,12 @@
 #include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-int all_files; //공통되는 전역변수 
- 
+static int all_files; 
+
+extern void sub(); //다른 함수에 정의된 아이를 끌어와 쓰겠다는 뜻인 extern 
  
 int main(int argc, char *argv[]) {
-	sub(); //이름없음의 void sub로 인해 연결됨 
+	sub();
 	printf("%d\n",all_files);
 	
 	return 0;
